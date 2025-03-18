@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->foreignId('level_id')->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignId('priority_id')->constrained()->onDelete('cascade');
+            $table->foreignId('level_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('status', ['open','in_progress', 'closed'])->default('open');
-            $table->timestamps('closed_at')->nullable();
+            $table->enum('status', ['open', 'in_progress', 'closed'])->default('open');
+            $table->timestamp('closed_at')->nullable();
             $table->timestamps();
         });
     }

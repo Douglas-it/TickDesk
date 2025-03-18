@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('status', ['active', 'inative'])->default('active');
+            $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }
